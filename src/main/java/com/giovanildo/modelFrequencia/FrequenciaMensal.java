@@ -8,6 +8,7 @@ public class FrequenciaMensal {
 	private PlanoDeTrabalho plano;
 	private SituacaoFrequenciaMensal situacao;
 	private Date mesAno;
+	
 	private Collection<AtividadeFrequenciaPesquisa> frequencias;
 
 	public int getId() {
