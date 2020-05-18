@@ -3,6 +3,9 @@ package com.giovanildo.modelFrequencia;
 import java.util.Date;
 
 public class AtividadeFrequenciaPesquisa {
+	/**
+	 * id
+	 */
 	private int id;
 	private FrequenciaMensal frequenciaMensal;
 	private Date dataInicio;
