@@ -1,55 +1,44 @@
 package com.giovanildo.dao;
 
-import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-
-import com.giovanildo.models.Clube;
-import com.giovanildo.models.Competidor;
-import com.giovanildo.models.EAtleta;
-import com.giovanildo.models.Torneio;
-import com.giovanildo.utils.JpaUtils;
-
 public class PopulaBanco {
-	
+
 	public static void buscaEmCascata() {
-		EntityManager em = JpaUtils.getEntityManager();
-		
-		String jpql = "select t from Torneio t join t.competidores c where c = :pCompetidor";
-		
-		Competidor competidor = new Competidor();
-		competidor.setId(10);
-		
-		TypedQuery<Torneio> query = em.createQuery(jpql, Torneio.class);
-		query.setParameter("pCompetidor", competidor);
-		
-		List<Torneio> lista = query.getResultList();
-		
-		for (Torneio daVez : lista) {
-			System.out.println(daVez.getNome());
-			System.out.println(daVez.getId());
-			for (Competidor competidor1 : daVez.getCompetidores()) {
-				System.out.println(competidor1.getClube());
-			}
-		}
-		
-	}
-	
-	public static void listandoDados() {
-		for (Clube daVez : new DAO<Clube>(Clube.class).listaTodos()) {
-			System.out.println(daVez.toString());
-		}
-
-		for (EAtleta daVez : new DAO<EAtleta>(EAtleta.class).listaTodos()) {
-			System.out.println(daVez.toString());
-		}
-
-		for (Torneio daVez : new DAO<Torneio>(Torneio.class).listaTodos()) {
-			System.out.println(daVez.toString());
-			System.out.println(daVez.getId());
-		}
-	}
+//		EntityManager em = JpaUtils.getEntityManager();
+//
+//		String jpql = "select t from Torneio t join t.competidores c where c = :pCompetidor";
+//		
+//		Competidor competidor = new Competidor();
+//		competidor.setId(10);
+//		
+//		TypedQuery<Torneio> query = em.createQuery(jpql, Torneio.class);
+//		query.setParameter("pCompetidor", competidor);
+//		
+//		List<Torneio> lista = query.getResultList();
+//		
+//		for (Torneio daVez : lista) {
+//			System.out.println(daVez.getNome());
+//			System.out.println(daVez.getId());
+//			for (Competidor competidor1 : daVez.getCompetidores()) {
+//				System.out.println(competidor1.getClube());
+//			}
+//		}
+//		
+//	}
+//	
+//	public static void listandoDados() {
+//		for (Clube daVez : new DAO<Clube>(Clube.class).listaTodos()) {
+//			System.out.println(daVez.toString());
+//		}
+//
+//		for (EAtleta daVez : new DAO<EAtleta>(EAtleta.class).listaTodos()) {
+//			System.out.println(daVez.toString());
+//		}
+//
+//		for (Torneio daVez : new DAO<Torneio>(Torneio.class).listaTodos()) {
+//			System.out.println(daVez.toString());
+//			System.out.println(daVez.getId());
+//		}
+//	}
 
 //	public static List<Competidor> adicionarTorneios() {
 //		// adicionando Torneio/Competidores
@@ -86,4 +75,5 @@ public class PopulaBanco {
 //		clubeService.insert(new Clube("Manchester", "Inglaterra"));
 //		clubeService.insert(new Clube("Porto", "Portugal"));
 //	}
+	}
 }
