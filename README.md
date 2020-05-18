@@ -1,2 +1,2 @@
-# lombras-jsf
-Gerenciador de Torneios de Futebol De Video Game
+# sigtemp
+Repositório temporário de modificações no sigaa
