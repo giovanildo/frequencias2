@@ -44,7 +44,7 @@ public class PlanoTrabalho {
 		this.descricao = descricao;
 	}
 
-	@OneToMany(mappedBy = "plano")
+	@OneToMany(mappedBy = "planoTrabalho") //Configuração não existe no sigaa
 	public Collection<FrequenciaMensal> getFrequenciasMensais() {
 		return frequenciasMensais;
 	}
