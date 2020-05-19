@@ -11,15 +11,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
+import javax.persistence.Table;
+//@SuppressWarnings("serial")
 @Entity
+@Table(name = "frequencia_mensal", schema = "pesquisa", uniqueConstraints = {})
 public class FrequenciaMensal {
 	private int id;
 	private PlanoTrabalho plano;
-	private Collection<SituacaoFrequenciaMensal> historicoSituacao;
 	private Date mesAno;
-	
+	private Collection<SituacaoFrequenciaMensal> historicoSituacao;
 	private Collection<AtividadePesquisa> frequencias;
+	
 	
 	@Id
 	@GeneratedValue

@@ -9,8 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "situacao_frequencia_mensal", schema = "pesquisa", uniqueConstraints = {})
 public class SituacaoFrequenciaMensal {
 	private int id;
 	private FrequenciaMensal frequenciaMensal;
@@ -27,7 +29,7 @@ public class SituacaoFrequenciaMensal {
 		this.id = id;
 	}
 
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	public Situacao getSituacao() {
 		return situacao;
 	}
