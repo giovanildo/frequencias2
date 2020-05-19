@@ -2,7 +2,13 @@ package com.giovanildo.models;
 
 import java.util.Date;
 
-public class AtividadeFrequenciaPesquisa {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+@Entity
+public class AtividadePesquisa {
 	/**
 	 * id
 	 */
@@ -12,6 +18,8 @@ public class AtividadeFrequenciaPesquisa {
 	private Date dataTermino;
 	private String descricao;
 	
+	@Id
+	@GeneratedValue
 	public int getId() {
 		return id;
 	}
@@ -36,6 +44,8 @@ public class AtividadeFrequenciaPesquisa {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	@ManyToOne
+	@JoinColumn(name = "id_frequencia_mensal")
 	public FrequenciaMensal getFrequenciaMensal() {
 		return frequenciaMensal;
 	}

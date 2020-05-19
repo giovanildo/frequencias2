@@ -3,14 +3,27 @@ package com.giovanildo.models;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
 public class FrequenciaMensal {
 	private int id;
-	private PlanoDeTrabalho plano;
-	private SituacaoFrequenciaMensal situacao;
+	private PlanoTrabalho plano;
+	private Collection<SituacaoFrequenciaMensal> historicoSituacao;
 	private Date mesAno;
 	
-	private Collection<AtividadeFrequenciaPesquisa> frequencias;
-
+	private Collection<AtividadePesquisa> frequencias;
+	
+	@Id
+	@GeneratedValue
+	@Column(name = "id_frequencia_mensal")
 	public int getId() {
 		return id;
 	}
@@ -18,21 +31,15 @@ public class FrequenciaMensal {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public PlanoDeTrabalho getPlano() {
+	
+	@ManyToOne
+	@JoinColumn(name = "id_plano_trabalho")
+	public PlanoTrabalho getPlano() {
 		return plano;
 	}
 
-	public void setPlano(PlanoDeTrabalho plano) {
+	public void setPlano(PlanoTrabalho plano) {
 		this.plano = plano;
-	}
-
-	public SituacaoFrequenciaMensal getSituacao() {
-		return situacao;
-	}
-
-	public void setSituacao(SituacaoFrequenciaMensal situacao) {
-		this.situacao = situacao;
 	}
 
 	public Date getMesAno() {
@@ -43,12 +50,23 @@ public class FrequenciaMensal {
 		this.mesAno = mesAno;
 	}
 
-	public Collection<AtividadeFrequenciaPesquisa> getFrequencias() {
+	public FrequenciaMensal() {
+		super();
+	}
+	@OneToMany(mappedBy = "frequenciaMensal", cascade = CascadeType.ALL)
+	public Collection<SituacaoFrequenciaMensal> getHistoricoSituacao() {
+		return historicoSituacao;
+	}
+
+	public void setHistoricoSituacao(Collection<SituacaoFrequenciaMensal> historicoSituacao) {
+		this.historicoSituacao = historicoSituacao;
+	}
+	@OneToMany (mappedBy = "frequenciaMensal")
+	public Collection<AtividadePesquisa> getFrequencias() {
 		return frequencias;
 	}
 
-	public void setFrequencias(Collection<AtividadeFrequenciaPesquisa> frequencias) {
+	public void setFrequencias(Collection<AtividadePesquisa> frequencias) {
 		this.frequencias = frequencias;
 	}
-
 }
