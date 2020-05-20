@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "plano_trabalho", schema = "pesquisa", uniqueConstraints = {})
+//@Entity
+//@Table(name = "plano_trabalho", schema = "pesquisa", uniqueConstraints = {})
 public class PlanoTrabalho {
 
 	private Integer id;

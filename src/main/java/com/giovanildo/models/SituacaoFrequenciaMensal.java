@@ -3,7 +3,6 @@ package com.giovanildo.models;
 import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
@@ -11,10 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "situacao_frequencia_mensal", schema = "pesquisa", uniqueConstraints = {})
+//@Entity
+//@Table(name = "situacao_frequencia_mensal", schema = "pesquisa", uniqueConstraints = {})
 public class SituacaoFrequenciaMensal {
 	private int id;
 	private FrequenciaMensal frequenciaMensal;

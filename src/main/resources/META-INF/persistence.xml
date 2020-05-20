@@ -5,9 +5,9 @@
              version="2.1">
 
     <persistence-unit name="sigtemp" transaction-type="RESOURCE_LOCAL">
-    <class>com.giovanildo.models.PlanoTrabalho</class>
+    <!-- <class>com.giovanildo.models.PlanoTrabalho</class> -->
     <class>com.giovanildo.models.FrequenciaMensal</class>
-    <class>com.giovanildo.models.SituacaoFrequenciaMensal</class>
+    <!-- <class>com.giovanildo.models.SituacaoFrequenciaMensal</class> -->
      
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
